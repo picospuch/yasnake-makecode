@@ -1,0 +1,32 @@
+{
+    "image2": {
+        "data": "hwQIAAgAAAAAAA8A8AAP//AP/w8A//8A/////wD//w/wDw/wAAAPAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "tile-asterisk"
+    },
+    "image3": {
+        "data": "hwQIAAgAAAAAAAAAAAAAAAAAAAD//w8A8P//8AD/DwAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "tile-exclamation-mark"
+    },
+    "image4": {
+        "data": "hwQIAAgAAAD///8ADwDwAA///wAP//APD/AADw8A8A/w//8AAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "tile-commercial-at"
+    },
+    "image1": {
+        "data": "hwQIAAgAAAB3d3d3R0REdEdERHRHRER0R0REdEdERHRHRER0d3d3dw==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "tile-demo"
+    },
+    "image5": {
+        "data": "hwQIAAgAAAD//////////////////////////////////////////w==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "tile-background"
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myImages"
+    }
+}
