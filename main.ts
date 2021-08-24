@@ -20,6 +20,7 @@ let body_sprite: Sprite;
 
 let n :number = 6;
 let d :direction = direction.RIGHT;
+controller.vibrate(500)
 
 /// functions
 function main () {
@@ -131,6 +132,7 @@ function judge () {
         setTimeout(function () {
             info.showScore(false);
         }, 500);
+        controller.vibrate(500)
         music.playMelody("E D G F B A C5 B", 1200)
         fod();
     }

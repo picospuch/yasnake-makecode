@@ -1,7 +1,7 @@
 /// the system implemented for tile-based game.
 namespace p {
     export enum color {
-        BACKGROUND = 0xd,
+        BACKGROUND = 0xf,
         TAN = 0xd,
         BLACK = 0xf,
         WHITE = 0x1,

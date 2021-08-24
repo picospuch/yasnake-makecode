@@ -2,7 +2,8 @@
     "name": "yasnake",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "controller": "*"
     },
     "files": [
         "main.ts",
