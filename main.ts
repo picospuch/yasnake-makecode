@@ -1,6 +1,4 @@
 /// types
-let list :Array<Sprite> = [];
-
 class location {
     x :number;
     y :number;
@@ -18,6 +16,8 @@ let head :location = new location(),
     body :Array<location> = [],
     food :location = new location();
 
+let body_sprite: Sprite;
+
 let n :number = 6;
 let d :direction = direction.RIGHT;
 
@@ -25,7 +25,7 @@ let d :direction = direction.RIGHT;
 function main () {
     p.listenToEvent();
 
-    //opening();
+    opening();
     init_run();
     
     (function while_true_loop_with_delay() {
@@ -39,20 +39,16 @@ function main () {
 }
 
 function opening() {
+    //image.setPalette(p.pallete);
     scene.setBackgroundColor(p.color.BACKGROUND)
-    for (let i = 0; i < 10; ++i) {
-        if (i % 2 == 0) {
-            p.setcolor(p.color.PURPLE);
-        } else {
-            p.setcolor(p.color.WHITE);
-        }
-        p.outtextxy(i, 0, "@");
-    }
+    //info.setScore((n - 6) * 100);
+    body_sprite = sprites.create(p.tiles["sprite-default"], SpriteKind.Player);
+    body_sprite.x = -16;
+    body_sprite.y = -16;
+    body_sprite.startEffect(effects.blizzard);
 }
 
 function init_run () {
-    p.setcolor(p.color.GREEN);
-    
     for (let i = 0; i< n; ++i) {
         body.push(new location());
     }
@@ -69,6 +65,7 @@ function init_run () {
 
     d = direction.RIGHT;
 
+    p.setcolor(p.color.PURPLE);
     p.outtextxy(0, 0, "*******");
 
     fod(); 
@@ -118,8 +115,10 @@ function run () {
 function draw () {
     p.setcolor(p.color.BACKGROUND);
     p.outtextxy(tail.x, tail.y, "_");
+    body_sprite.x = body[2].x * 8 - 8;
+    body_sprite.y = body[2].y * 8 - 8;
 
-    p.setcolor(p.color.GREEN);
+    p.setcolor(p.color.PURPLE);
     p.outtextxy(head.x, head.y, "*");
 }
 
@@ -127,10 +126,20 @@ function judge () {
     if (head.x == food.x && head.y == food.y) {
         body.push(new location());
         n = body.length;
-
+        info.setScore((n - 6) * 100);
+        info.showScore(true);
+        setTimeout(function () {
+            info.showScore(false);
+        }, 500);
+        music.playMelody("E D G F B A C5 B", 1200)
         fod();
     }
 
+    for (let i = 2; i < n; ++i) {
+        if (head.x == body[i].x && head.y == body[i].y) {
+            closing();
+        }
+    }
 }
 
 let fod_char :string = "@";
@@ -139,13 +148,13 @@ function fod () {
     food.x = Math.randomRange(0, 19);
     food.y = Math.randomRange(0, 14);
 
-    p.setcolor(p.color.PURPLE);
+    p.setcolor(p.color.GREEN);
     p.outtextxy(food.x, food.y, fod_string.charAt((n - 6) % 4));
 }
 
 
 function closing () {
-
+    game.over(true, effects.bubbles);
 }
 
 function update_shift_status () {

@@ -1,5 +1,5 @@
 {
-    "name": "yasnake-v1.1",
+    "name": "yasnake",
     "description": "",
     "dependencies": {
         "device": "*"

@@ -1,12 +1,17 @@
 /// the system implemented for tile-based game.
 namespace p {
     export enum color {
-        BACKGROUND = 0xf,
+        BACKGROUND = 0xd,
+        TAN = 0xd,
         BLACK = 0xf,
         WHITE = 0x1,
-        PURPLE = 0xb,
-        GREEN = 0x7
+        PURPLE = 0xa,
+        GREEN = 0x7, // green
+        BLUE = 0x8,
+        PINK = 0x3
     }
+
+    export let pallete: Buffer = hex`0000006e3232bb5735df9245ecd27483a816277224173b4704689417a1a981dbcdfdf9f1c7b29587715b463f3c201708`;
 
     export let scancode :ControllerButton;
 
@@ -21,7 +26,8 @@ namespace p {
         [index: string]: Image;
     }
 
-    let tiles: TileMap = {
+    export let tiles: TileMap = {
+        "sprite-default": assets.image`tile-sprite-default`,
         "_": assets.image`tile-background`,
         "*": assets.image`tile-asterisk`,
         "!": assets.image`tile-exclamation-mark`,

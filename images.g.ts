@@ -58,6 +58,17 @@ f f f f f f f f
 f f f f f f f f 
 f f f f f f f f 
 `;
+            case "image6":
+            case "tile-sprite-default":return img`
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+`;
         }
         return null;
     })
