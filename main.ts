@@ -1,3 +1,7 @@
+/// yasnake for makecode-arcade
+// copyright: picospuch 2021
+// license: GPL version 3
+
 /// types
 class location {
     x :number;

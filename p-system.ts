@@ -1,4 +1,7 @@
 /// the system implemented for tile-based game.
+// copyright: picospuch 2021
+// license: GPL version 3
+
 namespace p {
     export enum color {
         BACKGROUND = 0xf,
